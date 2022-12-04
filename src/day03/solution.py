@@ -1,3 +1,4 @@
+import functools
 from typing import Tuple, List, Set
 import string
 
@@ -5,6 +6,7 @@ RuckSack = Tuple[Set[str], Set[str]]
 VALUES = {c: i for i, c in enumerate(string.ascii_letters)}
 
 
+@functools.cache
 def read_rucksacks(file_name: str) -> List[RuckSack]:
     halve_str = lambda s: (set(s[:len(s) // 2]), set(s[len(s) // 2:]))
     with open(f"./inputs/{file_name}.txt") as f:

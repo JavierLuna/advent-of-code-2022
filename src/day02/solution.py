@@ -4,6 +4,7 @@ from typing import List, Tuple
 
 EncryptedStrategy = List[Tuple[str, str]]
 
+
 @functools.cache
 def get_score(opponent: str, me: str) -> int:
     me_index = "XYZ".index(me)

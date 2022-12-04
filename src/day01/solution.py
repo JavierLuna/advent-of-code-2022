@@ -1,6 +1,8 @@
+import functools
 from typing import List
 
 
+@functools.cache
 def read_elf_cals(file_name: str) -> List[int]:
     elf_cals = [0]
     with open(file_name) as f:
